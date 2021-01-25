@@ -20,9 +20,9 @@ jobs:
       - name: Checkout
         run: |
           wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/crazyjoy/main/jd_immortal.js
-          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/jdCookie.js
-          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/sendNotify.js
-          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/package.json
+          wget -P ~/scripts https://raw.githubusercontent.com/SallyU/fuidvsfjkd/master/jdCookie.js
+          wget -P ~/scripts https://raw.githubusercontent.com/SallyU/fuidvsfjkd/master/sendNotify.js
+          wget -P ~/scripts https://raw.githubusercontent.com/SallyU/fuidvsfjkd/master/package.json
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
