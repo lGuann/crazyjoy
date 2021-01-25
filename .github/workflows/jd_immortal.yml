@@ -18,9 +18,11 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: nxppru/jd_scripts
+        run: |
+          wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/crazyjoy/main/jd_immortal.js
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/jdCookie.js
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/sendNotify.js
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/package.json
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -31,27 +33,16 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: npm install
-        run: |        
-          npm install
-      - name: '运行 【京东神仙书院】'
-        run: |        
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} 
+      - name: '运行 【神仙书院】'
+        run: | 
+          cd ~/scripts
+          npm install 
           node jd_immortal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
-          UN_SUBSCRIBES: ${{ secrets.UN_SUBSCRIBES }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
-          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
-          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
-          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
-          QQ_SKEY: ${{ secrets.QQ_SKEY }}
-          QQ_MODE: ${{ secrets.QQ_MODE }}
-          PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
-          PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
+          JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
