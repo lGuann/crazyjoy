@@ -19,9 +19,9 @@ jobs:
       - name: Checkout
         run: |
           wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/crazyjoy/main/jd_festival.js
-          wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/backup/master/jdCookie.js
-          wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/backup/master/sendNotify.js
-          wget -P ~/scripts https://raw.githubusercontent.com/wheatwee/backup/master/package.json
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/jdCookie.js
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/sendNotify.js
+          wget -P ~/scripts https://raw.githubusercontent.com/lin-xh/demo1/master/package.json
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
