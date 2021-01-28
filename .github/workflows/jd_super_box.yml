@@ -31,6 +31,8 @@ jobs:
       - name: '运行 【京东超级盒子🎁】'
         run: |
           cd ~/scripts
+          sed -i 's/o7BMklE3hBkpf3DXD6wuvN8FTqjTin8ykY7LkIhznXQ/JAi0PJJKUwHTkjpgYIzv0A/' jd_super_box.js
+          sed -i 's/rJkRfgQx3zM-0t9ms-7epA/ydxUtDO57n5KtK35OrOBrw/' jd_super_box.js
           node jd_super_box.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
