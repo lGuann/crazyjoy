@@ -31,6 +31,8 @@ jobs:
       - name: '运行 【京东神仙书院】'
         run: |
           cd ~/scripts
+          sed -i 's/43xIs4YwE5Z7DsWOzDSEuhWEB_aJ-sA8pFRJX1GXo3t4wYcZB9whYHj2p7KRNbfDGnxg/' jd_immortal.js
+          sed -i 's/38xIs4YwE5Z7FHlFPPXjtnWziw3COWf7L8tOSxgjQaoFJmhgO2WGPayTavQ/' jd_immortal.js
           node jd_immortal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
