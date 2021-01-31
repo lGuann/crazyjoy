@@ -31,8 +31,8 @@ jobs:
       - name: '运行 【京东赚赚】'
         run: |
           cd ~/scripts
-          sed -i 's/^AUWE5m__/Sv_52QBoc_F3UIRyb1A@S5KkcOHdNrCCteUiI4KRr/' jd_jdzz.js
-          sed -i 's/^ASnANw_/S-aUmEVpeoAE/' jd_jdzz.js
+          sed -i 's/AUWE5m__EzWEKCWSu334Zkg@AUWE5m66VyDMLWmSpi3QblA@AUWE5mqiWzWAMDjSpjH8fxg@ACj1fmaSUzjEADWWXnQ/Sv_52QBoc_F3UIRyb1A@S5KkcOHdNrCCteUiI4KRr/' jd_jdzz.js
+          sed -i 's/ASnANw_HNm2pKXSatnw@AUWE5m66VyDMLWmSpi3QblA@AUWE5mqiWzWAMDjSpjH8fxg@ACj1fmaSUzjEADWWXnQ/S-aUmEVpeoAE/' jd_jdzz.js
           node jd_jdzz.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
