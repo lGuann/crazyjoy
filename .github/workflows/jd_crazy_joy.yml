@@ -31,8 +31,8 @@ jobs:
       - name: '运行 【crazyJoy任务】'
         run: |
           cd ~/scripts
-          sed -i 's/zVExHoHsSwhi2DmjsVnB1Kt9zd5YaBeE//' jd_crazyjoy.js
-          sed -i 's/4j3WhTDyE57QAd9rce15bA==//' jd_crazyjoy.js
+          sed -i 's/zVExHoHsSwhi2DmjsVnB1Kt9zd5YaBeE/' jd_crazy_joy.js
+          sed -i 's/4j3WhTDyE57QAd9rce15bA==/' jd_crazy_joy.js
           node jd_crazy_joy.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
