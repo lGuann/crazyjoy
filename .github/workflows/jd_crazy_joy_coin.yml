@@ -29,7 +29,7 @@ jobs:
           cd ~/scripts
           npm install
       - name: '运行 【crazyJoy挂机】'
-        timeout-minutes: 355
+        timeout-minutes: 330
         run: |
           cd ~/scripts
           node jd_crazy_joy_coin.js
